@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="OralHistoryBooth.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OralHistoryBooth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource AppBarItemBackgroundThemeBrush}" FontSize="72" Loaded="Page_Loaded" Height="850" Width="1561">
+    <Grid Background="White" >
+        <MediaPlayerElement x:Name="mediaPlayer" AreTransportControlsEnabled="True" 
+                            Margin="265,168,346,489" Visibility="{x:Bind audio.MediaPlayerActive}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="93,50,0,0" FontSize="40" TextWrapping="Wrap" Text="Time left:" VerticalAlignment="Top" Foreground="Black"/>
+        <TextBlock x:Name="timeLeft"  HorizontalAlignment="Left" Margin="40,105,0,0" TextWrapping="Wrap" FontSize="95" Text="{x:Bind audio.TimerString, Mode=OneWay}" VerticalAlignment="Top" Foreground="Black" Width="312"/>
+
+
+        <TextBlock x:Name="RecordAgainText" TextWrapping="Wrap" Text="Do you want to save your recording or delete it and try again?" 
+                   Width="913" FontSize="30" Foreground="Black" Margin="373,360,275,353" TextAlignment="Center" Visibility="Collapsed" />
+
+        <Button x:Name="saveButton" Content="Save" Height="50" Width="170" FontSize="24" Click="saveButton_Click" 
+                Foreground="White" Background="#FF565151" Margin="481,528,0,0" VerticalAlignment="Top" Visibility="Collapsed" />
+        <Button x:Name="adminButton" Content="Admin" Height="50" Width="170" FontSize="24" Click="AdminSignIn_Click" 
+                Foreground="White" Background="#FF565151" Margin="981,98,0,0" VerticalAlignment="Top"  />
+        <Button x:Name="deleteButton" Content="Delete" Height="50" Width="170" Margin="1024,528,0,0" FontSize="24" Click="deleteButton_Click" 
+                Foreground="White" Background="#FF595454" VerticalAlignment="Top" Visibility="Collapsed"/>
+
+
+        <TextBlock x:Name="NoMicrophone" HorizontalAlignment="Left" TextWrapping="Wrap" Text="No Microphone Detected!" 
+                   VerticalAlignment="Top" Foreground="Red" Margin="205,682,0,0" Visibility="{x:Bind audio.MicrophoneWarning, Mode=OneWay}" />
+        <Rectangle HorizontalAlignment="Left" Height="150" Margin="210,549,0,0" Stroke="Black" VerticalAlignment="Top" Width="807" Fill="#FFD9D9D9"/>
+        <CheckBox Content="Cafeteria" Margin="253,577,0,0" FontSize="30" VerticalAlignment="Top" CharacterSpacing="-7" />
+        <CheckBox Content="Chapel" Margin="253,624,0,0" FontSize="30" VerticalAlignment="Top" CharacterSpacing="-7" />
+        <CheckBox Content="Club Week" Margin="500,577,0,0" FontSize="30" VerticalAlignment="Top" CharacterSpacing="-7" />
+        <CheckBox Content="Dorm Life" Margin="500,624,0,0" FontSize="30" VerticalAlignment="Top" CharacterSpacing="-7" />
+        <CheckBox Content="Intramurals" Margin="770,577,0,0" FontSize="30" VerticalAlignment="Top" CharacterSpacing="-7" />
+        <CheckBox Content="Spring Sing" Margin="770,624,0,0" FontSize="30" VerticalAlignment="Top" CharacterSpacing="-7" />
+
+
+
+    </Grid>
+    <!--Code below from https://www.c-sharpcorner.com/UploadFile/2b876a/audio-recorder-in-windows-10-universal-windows-platform/-->
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True" IsSticky="True">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <AppBarButton x:Name="stopRecording" Icon="Stop" Label="Stop" 
+                              Click="{x:Bind audio.StopRecording}" IsEnabled="{x:Bind audio.IsStopEnabled, Mode=OneWay}"/>
+
+                <AppBarButton x:Name="startRecording" Icon="Microphone" Label="Start" 
+                              Click="{x:Bind audio.BeginRecording}" IsEnabled="{x:Bind audio.IsStartEnabled, Mode=OneWay}"/>
+
+                <AppBarButton x:Name="pauseRecording"  Icon="Pause" Label="Pause" 
+                              Click="{x:Bind audio.PauseRecording}" IsEnabled="{x:Bind audio.IsPauseEnabled, Mode=OneWay}"/>
+
+                <AppBarButton x:Name="resumeRecording" Icon="Play" Label="Resume" 
+                              Click="{x:Bind audio.ResumeRecording}" IsEnabled="{x:Bind audio.IsResumeEnabled, Mode=OneWay}"/>
+
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+</Page>

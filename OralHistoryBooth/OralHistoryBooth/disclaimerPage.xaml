@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="OralHistoryBooth.disclaimerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OralHistoryBooth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid>
+        <CheckBox x:Name="checkbox1" Content="I understand that this is a research project." Margin="150,159,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <CheckBox x:Name="checkbox2" Content="I agree to only share appropriate stories." Margin="150,221,0,0" FontSize="18" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkbox3" Content="I understand that there is a 10 minute time limit." Margin="150,286,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <CheckBox x:Name="checkbox4" Content="I consent for this story to be made publicly available in the history booth inside the library." Margin="150,355,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Content="Accept" Margin="0,600,0,0" VerticalAlignment="Top" Height="63" Width="272" FontSize="24" HorizontalAlignment="Center" Click="Button_Click"/>
+        <TextBlock x:Name="warningMessage" HorizontalAlignment="Center" Margin="-20,410,0,0" TextWrapping="Wrap" Text="All Boxes must be checked before continuing." VerticalAlignment="Top" FontSize="24" Foreground="Red" Visibility="Collapsed"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,90,0,0" TextWrapping="Wrap" Text="Terms of Use" VerticalAlignment="Top" FontSize="36"/>
+
+    </Grid>
+</Page>

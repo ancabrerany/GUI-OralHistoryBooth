@@ -1,0 +1,28 @@
+﻿<Page x:Name="checkbox4"
+    x:Class="OralHistoryBooth.infoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OralHistoryBooth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="130,70,0,0" TextWrapping="Wrap" Text="Personal Information" VerticalAlignment="Top" FontSize="36"/>
+        <TextBox x:Name="firstnameTextBox" HorizontalAlignment="Left" Margin="130,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="81" Width="339" FontSize="24" Header="First Name: " Foreground="White"/>
+        <TextBox x:Name="lastnameTextBox" HorizontalAlignment="Left" Margin="130,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" Width="339" Header="Last Name:"/>
+        <ComboBox x:Name="isHardingStudentComboBox" Margin="130,400,0,0" Width="320" Header="Were you a Harding student?" FontSize="24" Height="76" >
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+        </ComboBox>
+        <Button x:Name="nextButton" Content="Next" Margin="462,607,0,0" VerticalAlignment="Top" Height="80" Width="287" FontSize="36" Click="nextButton_Click"/>
+        <TextBlock x:Name="firstNameWarning" HorizontalAlignment="Left" Margin="130,210,0,0" TextWrapping="Wrap" Text="Please enter first name before continuing." VerticalAlignment="Top" FontSize="24" Foreground="Red" Visibility="Collapsed"/>
+        <TextBlock x:Name="lastNameWarning" HorizontalAlignment="Left" Margin="130,350,0,0" TextWrapping="Wrap" Text="Please enter last name before continuing." VerticalAlignment="Top" FontSize="24" Foreground="Red" Visibility="Collapsed"/>
+        <TextBlock x:Name="studentWarning" HorizontalAlignment="Left" Margin="130,474,0,0" TextWrapping="Wrap" Text="Please select Yes or No before continuing." VerticalAlignment="Top" FontSize="24" Foreground="Red" Visibility="Collapsed"/>
+        <TextBox x:Name="decadeTextBox" HorizontalAlignment="Left" Margin="605,400,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Header="What decade did this story take place in?" FontSize="24" Height="81" TextChanging="decadeTextBox_TextChanging"/>
+        <TextBlock x:Name="decadeWarning" HorizontalAlignment="Left" Margin="605,540,0,0" TextWrapping="Wrap" Text="Please enter decade before continuing." VerticalAlignment="Top" Foreground="Red" FontSize="24" Visibility="Collapsed"/>
+        <TextBlock x:Name="numbersWarning" HorizontalAlignment="Left" Margin="605,480,0,0" TextWrapping="Wrap" Width="490" Text="Enter only numbers please (Examples: 2010, 2020, 2000, etc...)" VerticalAlignment="Top" FontSize="24"/>
+
+    </Grid>
+</Page>

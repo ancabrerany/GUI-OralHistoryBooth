@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="OralHistoryBooth.SignInPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OralHistoryBooth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}">
+
+    <Grid FocusVisualSecondaryBrush="#99FFFFFF">
+        <TextBlock HorizontalAlignment="Left" Margin="500,90,0,0" TextWrapping="Wrap" Text="Sign In:" VerticalAlignment="Top" Height="153" Width="239" Foreground="Black" FontSize="72"/>
+
+        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Center" Margin="65,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="100" Width="450" FontSize="30" Header="Username:" Foreground="Black" Background="White"/>
+        <PasswordBox x:Name="passwordBox" MaxLength="16"  Margin="407,482,343,365" FontSize="30" Password="{x:Bind AudioRecorder.Password, Mode=TwoWay}" />
+        <Button x:Name="Login" Content="Login" Margin="450,656,0,0" VerticalAlignment="Top" Height="93" Width="341" FontSize="40" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="410,435,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" FontSize="31.5"/>
+        <TextBlock x:Name="userNullWarning" HorizontalAlignment="Center" Margin="-20,360,0,0" TextWrapping="Wrap" Text="Please enter a valid username." VerticalAlignment="Top" FontSize="27" Foreground="Red" Visibility="Collapsed"/>
+        <TextBlock x:Name="incorrectWarning" HorizontalAlignment="Center" Margin="60,210,0,0" TextWrapping="Wrap" Text="Incorrect username or password." VerticalAlignment="Top" FontSize="32" Foreground="Red" Visibility="Collapsed"/>
+        <TextBlock x:Name="passwordNullWarning" HorizontalAlignment="Left" Margin="410,543,0,0" TextWrapping="Wrap" Text="Please enter a valid password." VerticalAlignment="Top" FontSize="27" Foreground="Red" Visibility="Collapsed"/>
+
+    </Grid>
+</Page>
